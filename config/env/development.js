@@ -29,7 +29,12 @@ module.exports = {
     level: 'verbose'
   },
   connections: {
-    psql: process.env.DATABASE_URL
+    psql: {
+    adapter: 'sails-postgresql',
+    url: process.env.DATABASE_URL,
+    pool: false,
+    ssl: true,
+    schema: true}
   },
 
 };

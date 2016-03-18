@@ -35,7 +35,11 @@ module.exports = {
   //   level: "silent"
   // }
   connections: {
-    psql: process.env.DATABASE_URL
+    adapter: 'sails-postgresql',
+    url: process.env.DATABASE_URL,
+    pool: false,
+    ssl: true,
+    schema: true
   }
 
 };
