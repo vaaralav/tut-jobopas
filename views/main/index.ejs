@@ -1,0 +1,35 @@
+<h1>TUTJOBOPAS</h1>
+<% if (!user) {%>
+<h3>Login</h3>
+<form role="form" action="/auth/local" method="post">
+  <input type="text" name="identifier" placeholder="Username or Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Sign in</button>
+</form>
+
+<h3>Register</h3>
+<form role="form" action="/auth/local/register" method="post" id="tag-form">
+  <input type="text" name="username" placeholder="Username">
+  <input type="text" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Sign up</button>
+</form>
+<% } else {%>
+<p>Hei <%= user.username  %>!!</p>
+<h2>Lisää aihetunniste:</h2>
+<form id="tag-form" role="form">
+  <input type="text" name="name" id="name" placeholder="joku tagi tähän">
+  <button type="submit">Lisää!</button>
+</form>
+
+<h3>Järjestelmässä jo olevat aihetunnisteet:</h3>
+<% if(tags) { %>
+<ul id="tags">
+<% tags.forEach(function(tag) { %>
+  <li><%= tag.name %></li>
+<% }); %>
+</ul>
+
+<% } %>
+
+<% } %>
