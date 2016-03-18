@@ -20,6 +20,7 @@
     "grunt-sync": "0.2.4",
     "include-all": "~0.1.6",
     "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
     "rc": "1.0.1",
     "sails": "~0.12.1",
     "sails-auth": "^2.1.3",
