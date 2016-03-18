@@ -10,6 +10,8 @@
  *
  */
 
+var connections = (process.env.DATABASE_URL ? process.env.DATABASE_URL : {})
+
 module.exports = {
 
   /***************************************************************************
@@ -25,6 +27,8 @@ module.exports = {
 
   log: {
     level: 'verbose'
-  }
+  },
+  connections:
+    psql: process.env.DATABASE_URL
 
 };
