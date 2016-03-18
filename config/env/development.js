@@ -28,7 +28,8 @@ module.exports = {
   log: {
     level: 'verbose'
   },
-  connections:
+  connections: {
     psql: process.env.DATABASE_URL
+  },
 
 };
