@@ -1,3 +1,4 @@
+<div class="container">
 <h1>TUTJOBOPAS</h1>
 <% if (!user) {%>
 <h3>Login</h3>
@@ -24,12 +25,21 @@
 
 <h3>Järjestelmässä jo olevat aihetunnisteet:</h3>
 <% if(tags) { %>
-<ul id="tags">
-<% tags.forEach(function(tag) { %>
-  <li><%= tag.name %></li>
+<div id="tags-list">
+<% tags.forEach(function(tag, index) { %>
+  <div class="tags-list__tag <%= index % 2 === 0 ? 'tags-list__tag--even' : 'tags-list__tag--odd'%>">
+    <div class="tags-list__tag__name">
+      <%= tag.name %>
+    </div>
+    <div class="tags-list__tag__buttons">
+      <button class="tags-list__tag__buttons__edit">Muokkaa</button>
+      <button class="tags-list__tag__buttons__remove">Poista</button>
+    </div>
+  </div>
 <% }); %>
-</ul>
+</div>
 
 <% } %>
 
 <% } %>
+</div>
