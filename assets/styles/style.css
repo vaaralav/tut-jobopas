@@ -1,0 +1,35 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.tags-list__tag {
+  max-width: 400px;
+  overflow: auto;
+  padding: 10px;
+}
+.tags-list__tag__name {
+  width: 50%;
+  float: left;
+  display: inline;
+  color: #666;
+  font-family: sans-serif;
+}
+.tags-list__tag--odd {
+  background: #FEE;
+}
+.tags-list__tag--even {
+  background: #EEF;
+}
+
+.tags-list__tag__buttons {
+  width: 50%;
+  float: right;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.tags-list__tag__edit {
+
+}
