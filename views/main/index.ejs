@@ -27,13 +27,15 @@
 <% if(tags) { %>
 <div id="tags-list">
 <% tags.forEach(function(tag, index) { %>
-  <div class="tags-list__tag <%= index % 2 === 0 ? 'tags-list__tag--even' : 'tags-list__tag--odd'%>">
+  <div class="tags-list__tag" data-id="<%= tag.id %>">
     <div class="tags-list__tag__name">
       <%= tag.name %>
     </div>
     <div class="tags-list__tag__buttons">
       <button class="tags-list__tag__buttons__edit">Muokkaa</button>
+      <button class="tags-list__tag__buttons__save">Tallenna</button>
       <button class="tags-list__tag__buttons__remove">Poista</button>
+      <button class="tags-list__tag__buttons__cancel">Peru</button>
     </div>
   </div>
 <% }); %>

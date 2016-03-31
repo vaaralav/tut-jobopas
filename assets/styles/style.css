@@ -8,7 +8,17 @@
   max-width: 400px;
   overflow: auto;
   padding: 10px;
+
 }
+
+.tags-list__tag:nth-child(even) {
+  background: #EEF;
+}
+
+.tags-list__tag:nth-child(odd) {
+  background: #FEE;
+}
+
 .tags-list__tag__name {
   width: 50%;
   float: left;
@@ -16,9 +26,7 @@
   color: #666;
   font-family: sans-serif;
 }
-.tags-list__tag--odd {
-  background: #FEE;
-}
+
 .tags-list__tag--even {
   background: #EEF;
 }
@@ -30,6 +38,11 @@
   vertical-align: middle;
 }
 
-.tags-list__tag__edit {
 
+.tags-list__tag__buttons__save {
+  display: none;
+}
+
+.tags-list__tag__buttons__cancel {
+  display: none;
 }

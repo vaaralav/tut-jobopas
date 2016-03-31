@@ -4,7 +4,9 @@ var MainController =  {
     console.log(user);
     var tags = {};
     if(user) {
-      Tag.find().exec(function(err, tags) {
+      Tag.find()
+      .sort("id ASC")
+      .exec(function(err, tags) {
         if(err) return res.negotiate(err);
         return res.view('main/index', {user: user, tags: tags});
       });
