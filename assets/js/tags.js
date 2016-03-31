@@ -61,7 +61,7 @@ var editTag = function editTag(tag) {
   $(tag).find(".tags-list__tag__name").toggle()
 
   // Insert text input
-  $(tag).append('<input type="text" value=' + oldVal + '/>');
+  $(tag).append('<input type="text" value="' + oldVal.trim() + '"/>');
 
   toggleButtons(tag);
 
