@@ -51,12 +51,18 @@ module.exports.policies = {
   //
   //
   //
-  ' * ' : ['passport', 'sessionAuth'],
+  '*' : ['passport', 'sessionAuth'],
   'auth': {
     '*' : ['passport']
   },
   'UserController' : {
-      '*': ['passport', 'bearerAuth']
+      '*': false,
+      'findOne': ['passport', 'bearerOrSessionAuth']
+  },
+  'TagController': {
+    '*' : ['passport', 'bearerOrSessionAuth'],
+    'find': true,
+    'findOne': true
   },
   'MainController' : ['passport'],
 };
