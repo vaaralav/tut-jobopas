@@ -27,8 +27,8 @@
   font-family: sans-serif;
 }
 
-.tags-list__tag--even {
-  background: #EEF;
+.tags-list__tag input[type=text] {
+  height: 21px;
 }
 
 .tags-list__tag__buttons {
