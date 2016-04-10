@@ -57,7 +57,7 @@ module.exports.policies = {
   },
   'UserController' : {
       '*': false,
-      'findOne': ['passport', 'bearerOrSessionAuth']
+      'findOne': ['passport', 'bearerOrSessionAuth', 'sameUserAuth']
   },
   'TagController': {
     '*' : ['passport', 'bearerOrSessionAuth'],
