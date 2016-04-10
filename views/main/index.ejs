@@ -16,7 +16,9 @@
   <button type="submit">Sign up</button>
 </form>
 <% } else {%>
-<p>Hei <%= user.username  %>!!</p>
+<h2>Hei <%= user.username  %>!!</h2>
+
+
 <h2>Lisää aihetunniste:</h2>
 <form id="tag-form" role="form">
   <input type="text" name="name" id="name" placeholder="joku tagi tähän">
@@ -43,5 +45,26 @@
 
 <% } %>
 
+<% if (user.passports && user.passports.length > 0) { %>
+<h3>Bearer Token TUTJOBOPAS API:n käyttöön</h3>
+<p>
+Access Token: <code><%= user.passports[0].accessToken %></code>
+</p>
+<p>Bearer Tokenia käytetään TUTJOBOPAS API -kutsuissa autentikoitumiseen.
+Tokenin sijoitetaan esimerkiksi HTTP-pyynnön headeriin.</p>
+<pre>
+PUT /api/tag/1 HTTP/1.1
+Content-Type application/json
+Authorization : Bearer &lt;token&gt;
+
+{
+  "name": "Passport.js"
+}
+
+</pre>
+<% } // endif user.passports %>
+<hr />
+
 <% } %>
+
 </div>
