@@ -46,3 +46,11 @@
 .tags-list__tag__buttons__cancel {
   display: none;
 }
+
+#job-search {
+  background-color: #FDD;
+}
+
+#job-search .btn {
+  margin: 2px;
+}
