@@ -77,6 +77,7 @@
   padding: 20px;
   box-shadow: 1px 1px 10px #888888;
   max-height: 600px;
+  overflow-y: scroll;
 
 }
 
@@ -84,8 +85,25 @@
   color: blue;
 }
 
-.jobs-container {
-  overflow-y: auto;
+.close-button-container {
+  text-align: right;
+}
+
+.job-view {
+  border-top: 1px solid #F9F;
+  padding: 10px;
+}
+
+.job-view h4 {
+  margin: 0;
+}
+
+.job-view:hover {
+  background-color: #FEF;
+}
+
+button#more-jobs {
+
 }
 
 
