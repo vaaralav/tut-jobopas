@@ -49,6 +49,11 @@
 
 #job-search {
   background-color: #FDD;
+  padding-bottom: 20px;
+}
+
+#job-search input {
+  margin-bottom: 10px;
 }
 
 #job-search .btn {
