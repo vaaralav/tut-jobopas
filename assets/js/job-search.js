@@ -11,6 +11,31 @@
     return $jobSearchAction;
   }
 
+  var jobView = function jobView(job) {
+
+  }
+
+  var jobsPopup = function jobsPopup(tagName, data) {
+    $(".ontop").show();
+    $("body").addClass("stop-scrolling");
+    var $jobsPopup = $("<div>", {
+      id: "jobs-popup"
+    });
+    window.data = data;
+    $jobsPopup.append("<h3>" + tagName + "</h3>");
+    $jobsPopup.append("<p>Yhteensä " + data.found_items + " hakutulosta.");
+    $jobsPopup.append($("<div>", {class: "jobs-container"}));
+    data.items.forEach(function (job) {
+      var $jobView = $("<div>", {class: "job-view"});
+      $jobView.append("<h4>" + job.name
+        + " <small>" + job.employer + "</small></h4>");
+      console.log($jobView);
+      $jobsPopup.find(".jobs-container").append($jobView);
+    })
+    console.log(data);
+    $(".ontop").append($jobsPopup);
+  }
+
   var spacesToDashes = function(str) {
     str.replaceAll('data name')
   }
@@ -19,7 +44,7 @@
   var searchJobs = function searchJobs(tagName) {
     console.log("Search!");
     $.getJSON('https://tyopaikat.api.oikotie.fi/rest/1/job-search?jq=' + tagName + '', function(data) {
-      console.log(data);
+      jobsPopup(tagName, data);
     });
   }
 
