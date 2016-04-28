@@ -10,6 +10,17 @@ git clone https://github.com/vaaralav/tut-jobopas.git
 cd tut-jobopas
 npm install
 ```
-Next `cp config/local.js.example config/local.js` and setup postgresql adapter with your development database settings in `config/local.js`.
+Next `cp config/local.js.example config/local.js` and setup postgresql adapter with your development database settings at the end of `config/local.js`.
+```JavaScript
+...
+connections: {
+// Settings for local Postgres.app
+postgresql: {
+  user: 'YOUR_USERNAME',
+  password: '',
+  database: 'YOUR_USERNAME',
+}
+...
+```
 
 After that ensure that the database is running and hit `npm start` (or `sails lift` if you have Sails.js installed globally). Head your browser to `localhost:1337` and see the application in action.
