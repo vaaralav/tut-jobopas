@@ -36,7 +36,8 @@
     var $jobsPopup = $("<div>", {
       id: "jobs-popup"
     });
-    $jobsPopup.append( $("<div>", {class: "close-button-container"}).append("<button>X</button>") );
+    $jobsPopup.append( $("<div>", {class: "close-button-container"})
+      .append("<button>X</button>") );
     $jobsPopup.append("<h3>" + tagName + "</h3>");
     $jobsPopup.append("<p>Yhteensä " + data.found_items + " hakutulosta.");
 
@@ -50,10 +51,11 @@
 
     if($jobsPopup.find(".job-view").length < data.found_items) {
       $jobsPopup.find(".jobs-container")
-        .append("<button type='button' id='more-jobs' class='btn btn-primary'>Lataa lisää ilmoituksia</button>");
+        .append("<button type='button' id='more-jobs' class='btn btn-primary'>"
+          +"Lataa lisää ilmoituksia</button>");
     }
 
-
+    // Finally show the job views
     $(".ontop").append($jobsPopup);
   }
 
@@ -102,12 +104,11 @@
 
   /**
    * Automagic search
-   * @param  {Object} event) {               if ($(this).val().length > 0) {      io.socket.get('/api/tag?where [description]
-   * @return {[type]}        [description]
    */
   $("#job-search-input").on('input', function(event) {
     if ($(this).val().length > 0) {
-      io.socket.get('/api/tag?where={"name":{"startsWith":"' + encodeURIComponent($(this).val()) + '"}}',
+      io.socket.get('/api/tag?where={"name":{"startsWith":"'
+        + encodeURIComponent($(this).val()) + '"}}',
         function(data) {
           $("#job-search-actions").empty();
 
