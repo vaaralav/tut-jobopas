@@ -16,7 +16,8 @@
   <button type="submit">Sign up</button>
 </form>
 <% } else {%>
-<h2>Hei <%= user.username  %>!!</h2>
+<h2 style="display:inline-block;">Hei <%= user.username  %>!!</h2>
+<a style="margin: 5px;" href="/logout" class="btn btn-info">Kirjaudu ulos</a>
 <div class="row">
 <%- partial('job-search') %>
 <div class="col-md-6">
