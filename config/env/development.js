@@ -10,10 +10,9 @@
  *
  */
 
-var connections = (process.env.DATABASE_URL ? process.env.DATABASE_URL : {})
+var connections = process.env.DATABASE_URL ? process.env.DATABASE_URL : {};
 
 module.exports = {
-
   /***************************************************************************
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
@@ -30,11 +29,11 @@ module.exports = {
   },
   connections: {
     psql: {
-    adapter: 'sails-postgresql',
-    url: process.env.DATABASE_URL,
-    pool: false,
-    ssl: true,
-    schema: true}
-  },
-
+      adapter: 'sails-postgresql',
+      url: process.env.DATABASE_URL,
+      pool: false,
+      ssl: false,
+      schema: true
+    }
+  }
 };
